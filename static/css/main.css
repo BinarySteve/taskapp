@@ -6,6 +6,7 @@ body, html {
 .content {
     margin: 0 auto;
     width: 400px;
+    font-family: Cinzel;
 }
 
 table, td, th {
