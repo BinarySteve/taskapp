@@ -4,7 +4,9 @@ body, html {
     margin: 0;
     font-family: 'Merriweather', serif;
 }
-
+a{
+    text-decoration: none !important;
+}
 .content {
     margin: 0 auto;
     width: 400px;
@@ -38,6 +40,17 @@ td {
 .card-header{
     font-size: 1.5em;
 
+}
+.fa-trash{
+    font-size: 1.5em;
+    margin-right: .3em;
+    color: #ffa000;
+}
+
+.fa-user-edit{
+    font-size: 1.5em;
+    margin-right: .3em;
+    color: #ffa000;
 }
 
 #content {

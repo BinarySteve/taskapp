@@ -10,8 +10,13 @@
 
     <div class="form">
         <form action="/update/{{task.id}}" method="POST">
-            <input type="text" name="content" id="content" value="{{task.content}}">
-            <input type="submit" value="Update">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Add a task" id="content" name="content" value="{{task.content}}">
+                <div class="input-group-append">
+                  <button class="btn btn-dark btn-outline-warning btn-round" type="button">Update</button>
+                </div>
+              </div>
+           
         </form>
     </div>
 </div>
