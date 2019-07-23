@@ -1,15 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel|Merriweather&display=swap');
+
 body, html {
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Merriweather', serif;
 }
 
 .content {
     margin: 0 auto;
     width: 400px;
+    font-family: Cinzel;
 }
 
 table, td, th {
     border: 1px solid #aaa;
+
 }
 
 table {
@@ -19,6 +23,7 @@ table {
 
 th {
     height: 30px;
+    
 }
 
 td {
@@ -29,6 +34,10 @@ td {
 .form {
     margin-top: 20px;
     text-align: center;
+}
+.card-header{
+    font-size: 1.5em;
+
 }
 
 #content {

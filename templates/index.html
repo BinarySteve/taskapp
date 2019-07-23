@@ -6,34 +6,40 @@
 
 {% block body %}
 <div class="content">
-    <h1 style="text-align: center">To Do's</h1>
+    <h1 class="text-center">To Do's</h1>
     {% if tasks|length < 1 %}
-    <h4 style="text-align: center">There are no tasks. Create one below!</h4>
+    <h4 class="text-center">There are no tasks. Create one below!</h4>
     {% else %}
-    <table>
-        <tr>
-            <th>Task</th>
-            <th>Added</th>
-            <th>Actions</th>
-        </tr>
-        {% for task in tasks %}
-            <tr>
-                <td>{{ task.content }}</td>
-                <td>{{ task.date_create.date() }}</td>
-                <td>
-                    <a href="/delete/{{task.id}}">Delete</a>
-                    <br>
-                    <a href="/update/{{task.id}}">Update</a>
-                </td>
-            </tr>
-        {% endfor %}
-    </table>
+    <div class="containter-fluid">
+        <div class="card text-white bg-dark shadow-lg">
+            <div class="card-header text-center">Tasks</div>
+            <table class="bg-light text-dark">
+                <tr class="text-center">
+                    <th>Task</th>
+                    <th>Added</th>
+                    <th>Actions</th>
+                </tr>
+                {% for task in tasks %}
+                    <tr>
+                        <td>{{ task.content }}</td>
+                        <td>{{ task.date_create.date() }}</td>
+                        <td>
+                            <a href="/delete/{{task.id}}">Delete</a>
+                            <br>
+                            <a href="/update/{{task.id}}">Update</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    
     {% endif %}
 
     <div class="form">
         <form action="/" method="POST">
             <input type="text" name="content" id="content">
-            <input type="submit" value="Add Task">
+            <button type="submit" class="btn btn-secondary btn-outline-warning" value="Add Task">Add Task</button>
         </form>
     </div>
 </div>
