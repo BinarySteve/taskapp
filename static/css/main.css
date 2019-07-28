@@ -3,6 +3,7 @@
 body, html {
     margin: 0;
     font-family: 'Merriweather', serif;
+    background-image: radial-gradient(255,122,10)
 }
 a{
     text-decoration: none !important;
