@@ -6,12 +6,12 @@
 
 {% block body %}
 <div class="content">
-    <h1 class="text-center">To Do's</h1>
+    <h1 class="text-center" id="todotitle">To Do's</h1>
     {% if tasks|length < 1 %}
-    <h4 class="text-center">There are no tasks. Create one below!</h4>
+    <h3 class="text-center">There are no tasks. Create one below!</h3>
     {% else %}
-    <div class="containter-fluid">
-        <div class="card text-white bg-dark shadow-lg">
+    <div class="container-fluid">
+        <div class="card text-white bg-dark shadow-lg" id="cardheader">
             <div class="card-header text-center">Tasks</div>
             <table class="bg-light text-dark">
                 <tr class="text-center">
@@ -41,7 +41,7 @@
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Add a task" id="content" name="content">
                 <div class="input-group-append">
-                  <button class="btn btn-dark btn-outline-warning btn-round" type="button">Add task</button>
+                  <button class="btn btn-round btn-dark btn-outline-warning" id="addtaskbtn" type="button">Add task</button>
                 </div>
               </div>
               
