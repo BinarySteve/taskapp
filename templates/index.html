@@ -5,47 +5,50 @@
 {% endblock %}
 
 {% block body %}
+<h1 class="text-center" id="todotitle">To Do's</h1>
 <div class="content">
-    <h1 class="text-center" id="todotitle">To Do's</h1>
-    {% if tasks|length < 1 %}
-    <h3 class="text-center">There are no tasks. Create one below!</h3>
-    {% else %}
+    
     <div class="container-fluid">
-        <div class="card text-white bg-dark shadow-lg" id="cardheader">
+    {% if tasks|length < 1 %}
+    <h3 class="text-center text-white">There are no tasks. Create one below!</h3>
+    {% else %}
+   
+        <div class="card text-white bg-clear shadow-lg text-dark" id="cardheader">
             <div class="card-header text-center">Tasks</div>
-            <table class="bg-light text-dark">
-                <tr class="text-center">
-                    <th>Task</th>
-                    <th>Added</th>
-                    <th>Actions</th>
-                </tr>
+            <div class="list-group">
+                
                 {% for task in tasks %}
-                    <tr>
-                        <td>{{ task.content }}</td>
-                        <td>{{ task.date_create.date() }}</td>
-                        <td>
-                            <a href="/delete/{{task.id}}"><i class="fa fa-trash"> </i>Delete</a>
-                            <br><br>
-                            <a href="/update/{{task.id}}"><i class="fa fa-user-edit"></i>  Update</a>
-                        </td>
-                    </tr>
+                <div class="shadow p-3 bg-clear rounded">
+                <div class="d-flex w-100 justify-content-between">
+                       
+                        <small>{{ task.date_create.date() }}</small>
+                      </div>
+                      <p class="mb-1">{{ task.content }}
+                        <a href="/delete/{{task.id}}"><i class="fa fa-trash"></i></a></span>
+                        <a href="/update/{{task.id}}"><i class="fa fa-user-edit"></i></a></small>
+                        </p>
+                    </div>  
+                        
+                    
+              
                 {% endfor %}
-            </table>
+               
         </div>
-    </div>
+    
     
     {% endif %}
-
+    </div>
     <div class="form">
         <form action="/" method="POST">
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Add a task" id="content" name="content">
                 <div class="input-group-append">
-                  <button class="btn btn-round btn-dark btn-outline-warning" id="addtaskbtn" type="button">Add task</button>
+                    <input class="btn btn-round btn-dark" id="addtaskbtn" type="submit" value="Add task">
                 </div>
               </div>
               
            </form>
     </div>
+</div>
 </div>
 {% endblock %}
