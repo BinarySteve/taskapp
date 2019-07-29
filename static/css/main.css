@@ -3,11 +3,8 @@
 body, html {
     margin: 0;
     font-family: 'Merriweather', serif;
-    /*display: inline-block;*/
     background-image: linear-gradient(90deg, blue, green);
-    background-image: -webkit-linear-gradient(90deg, blue, green);
-    background-image: -moz-linear-gradient(90deg, blue, green);
-    background-image: -o-linear-gradient(90deg, blue, green);
+   
    
     
 }
@@ -92,4 +89,17 @@ td {
 }
 .container{
     border: 2px solid #000;     
+}
+@media screen and (max-width: 768px){
+    .col-sm-4{
+       margin: 25px 0;
+    }
+}
+@media screen and (max-width: 480px){
+    .col-sm-4{
+       margin: 25px 0;
+    }
+    small{
+        float: left;
+    }
 }
