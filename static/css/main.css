@@ -103,7 +103,13 @@ td {
         width: 100%;
         margin-top: 1em;
         left: 100%;
+    }
+    #updateh1, #todotitle{
+        font-size: 2em;
+    }
+
 }
+
 @media screen and (max-width: 480px){
     .col-sm-4{
        margin: 25px 0;
@@ -115,5 +121,8 @@ td {
         left: 100%;
         
         
+    }
+    #updateh1, #todotitle{
+        font-size: 2em;
     }
 }
