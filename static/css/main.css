@@ -94,12 +94,26 @@ td {
     .col-sm-4{
        margin: 25px 0;
     }
+    #addtaskbtn{
+        width: 100%;
+        margin-bottom: 2em;
+    }
+    #addtaskbtn{
+        position: relative;
+        width: 100%;
+        margin-top: 1em;
+        left: 100%;
 }
 @media screen and (max-width: 480px){
     .col-sm-4{
        margin: 25px 0;
     }
-    small{
-        float: left;
+    #addtaskbtn{
+        position: relative;
+        width: 100%;
+        margin-top: 1em;
+        left: 100%;
+        
+        
     }
 }
