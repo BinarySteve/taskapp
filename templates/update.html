@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>Task Master</title>
+<title>Update To Do</title>
 {% endblock %}
 
 {% block body %}
@@ -10,9 +10,9 @@
     
 
     <div class="form">
-        <form action="/update/{{task.id}}" method="POST">
+        <form action="/update/{{todo.id}}" method="POST">
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Add a task" id="content" name="content" value="{{task.content}}">
+                <input type="text" class="form-control" placeholder="Add a todo" id="content" name="content" value="{{todo.content}}">
                 <div class="input-group-append">
                   <input class="btn btn-round btn-dark" id="updatebtn" type="submit" value="Update">
                 </div>
