@@ -6,14 +6,14 @@
 
 {% block body %}
 <div class="content">
-    <h1 style="text-align: center">Update To Do</h1>
+    <h1 class="text-center" id="updateh1">Update To Do</h1>
 
     <div class="form">
         <form action="/update/{{task.id}}" method="POST">
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Add a task" id="content" name="content" value="{{task.content}}">
                 <div class="input-group-append">
-                  <button class="btn btn-round btn-dark btn-outline-warning" id="updatebtn" type="button">Update</button>
+                  <input class="btn btn-round btn-dark" id="updatebtn" type="submit" value="Update">
                 </div>
               </div>
            
