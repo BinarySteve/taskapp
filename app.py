@@ -4,7 +4,7 @@ from datetime import datetime
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///task.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo.db'
 db = SQLAlchemy(app)
 
 class Todo(db.Model):
@@ -14,51 +14,51 @@ class Todo(db.Model):
     
 
     def __repr__(self):
-        return '<Task %r>' % self.id
+        return '<todo %r>' % self.id
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
-        task_content = request.form['content']
-        new_task = Todo(content=task_content)
+        todo_content = request.form['content']
+        new_todo = Todo(content=todo_content)
         try:
-            db.session.add(new_task)
+            db.session.add(new_todo)
             db.session.commit()
             return redirect('/')
         except:
-            return 'There was an error in adding your task'
+            return 'There was an error in adding your todo'
     else:
-        tasks = Todo.query.order_by(Todo.date_create).all()
-        return render_template('index.html', tasks=tasks)
+        todos = Todo.query.order_by(Todo.date_create).all()
+        return render_template('index.html', todos=todos)
     
 @app.route('/delete/<int:id>')
 def delete(id):
-    task_to_delete = Todo.query.get_or_404(id)
+    todo_to_delete = Todo.query.get_or_404(id)
 
     try:
-        db.session.delete(task_to_delete)
+        db.session.delete(todo_to_delete)
         db.session.commit()
         return redirect('/')
 
     except:
-        return 'Could not delete task'
+        return 'Could not delete todo'
         
 @app.route('/update<int:id>', methods = ['GET', 'POST'])
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
-    task = Todo.query.get_or_404(id)
+    todo = Todo.query.get_or_404(id)
 
     if request.method == 'POST':
-        task.content = request.form['content']
+        todo.content = request.form['content']
 
         try:
             db.session.commit()
             return redirect('/')
         except:
-            return 'There was an issue updating your task'
+            return 'There was an issue updating your todo'
 
     else:
-        return render_template('update.html', task=task)
+        return render_template('update.html', todo=todo)
 
 if __name__ == '__main__':
     app.run(debug=True)
