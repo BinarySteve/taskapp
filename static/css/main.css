@@ -5,6 +5,10 @@ body, html {
     font-family: 'Merriweather', serif;
     /*display: inline-block;*/
     background-image: linear-gradient(90deg, blue, green);
+    background-image: -webkit-linear-gradient(90deg, blue, green);
+    background-image: -moz-linear-gradient(90deg, blue, green);
+    background-image: -o-linear-gradient(90deg, blue, green);
+   
     
 }
 a{
